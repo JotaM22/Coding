@@ -53,32 +53,32 @@
   .footer { display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px; padding:0 5px; color:#90aebd; font-size:11px; }
   .overlay { position:absolute; inset:0; z-index:10; display:flex;align-items:center;justify-content:center; padding:18px; background:#03111ed6; backdrop-filter:blur(7px); overflow-y:auto; }
   .overlay[hidden] { display:none; }
-  .modal { width:min(100%,570px); max-height:100%; overflow-y:auto; border:1px solid #426879; border-radius:22px; background:linear-gradient(155deg,#132f3f,#081b28 72%); box-shadow:0 25px 80px #000b; padding:clamp(19px,4vw,34px); }
-  .modal .label { font-size:11px; font-weight:900; color:var(--mint); text-transform:uppercase; letter-spacing:1.8px; }
-  .modal h2 { font-size:clamp(24px,4.5vw,39px);letter-spacing:-1.2px;line-height:1.09;margin:9px 0 13px; }
-  .modal p { font-size:clamp(13px,1.7vw,15px); color:#bcd1de; line-height:1.52; margin:0 0 16px; }
-  .feature-list { margin:18px 0 22px;display:grid;gap:8px; }
-  .feature { display:flex; gap:11px; font-size:14px; color:#e1edf4; align-items:flex-start; }
-  .feature i { font-style:normal;display:grid;place-items:center;flex:0 0 27px; height:27px;border-radius:7px;background:#234555; }
-  .btn { width:100%; border:0; border-radius:12px; padding:15px 17px; background:var(--mint); color:#05252b; font-weight:900; font-size:15px; transition:transform .1s,background .15s; }
+  .modal { width:min(100%,720px); max-height:100%; overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; border:1px solid #426879; border-radius:22px; background:linear-gradient(155deg,#132f3f,#081b28 72%); box-shadow:0 25px 80px #000b; padding:clamp(19px,4vw,34px); }
+  .modal .label { font-size:14px; font-weight:900; color:var(--mint); text-transform:uppercase; letter-spacing:1.8px; }
+  .modal h2 { font-size:clamp(30px,4vw,42px);letter-spacing:-.8px;line-height:1.15;margin:10px 0 16px; }
+  .modal p { font-size:clamp(18px,2vw,21px); color:#d2e3ee; line-height:1.5; margin:0 0 18px; }
+  .feature-list { margin:20px 0 24px;display:grid;gap:12px; }
+  .feature { display:flex; gap:12px; font-size:clamp(17px,1.9vw,19px); line-height:1.45; color:#e1edf4; align-items:flex-start; }
+  .feature i { font-style:normal;display:grid;place-items:center;flex:0 0 31px; height:31px;border-radius:7px;background:#234555; }
+  .btn { width:100%; border:0; border-radius:12px; padding:15px 17px; background:var(--mint); color:#05252b; font-weight:900; font-size:19px; transition:transform .1s,background .15s; }
   .btn:hover { background:#88f3d8; }
   .btn:active { transform:scale(.99); }
-  .opts { display:grid; gap:9px; margin:20px 0 0; }
-  .option { display:flex; text-align:left;align-items:center; gap:10px; border-radius:12px; border:1px solid #416778; padding:13px 14px; color:#edf7fc; background:#173546; font-size:14px; font-weight:650; }
+  .opts { display:grid; gap:12px; margin:20px 0 0; }
+  .option { display:flex; text-align:left;align-items:center; gap:10px; border-radius:12px; border:1px solid #416778; padding:15px 16px; color:#edf7fc; background:#173546; font-size:clamp(17px,1.9vw,20px); line-height:1.4; font-weight:650; }
   .option:hover { background:#1c4657; }
-  .option .letter { font-size:11px;flex:0 0 25px;width:25px;height:25px; border:1px solid #678c9a; border-radius:7px; display:grid; place-items:center;color:#a9cbdb; }
+  .option .letter { font-size:15px;flex:0 0 30px;width:30px;height:30px; border:1px solid #678c9a; border-radius:7px; display:grid; place-items:center;color:#a9cbdb; }
   .option.positive { border-color:#5bd9bb; background:#12473f; }
-  .feedback { border-left:3px solid var(--amber); background:#3b33254d; border-radius:4px 10px 10px 4px; padding:11px 13px; font-size:14px;line-height:1.45; margin-top:12px;color:#f4e3c6; }
+  .feedback { border-left:3px solid var(--amber); background:#3b33254d; border-radius:4px 10px 10px 4px; padding:13px 15px; font-size:18px;line-height:1.5; margin-top:12px;color:#f4e3c6; }
   .feedback[hidden] { display:none; }
   .support { border:1px solid #418f80; background:#103b39; border-radius:14px; padding:16px; margin:16px 0; }
-  .support .support-title { color:#84f0d6; font-size:12px; font-weight:900; text-transform:uppercase;letter-spacing:1px; margin-bottom:7px; }
+  .support .support-title { color:#84f0d6; font-size:15px; font-weight:900; text-transform:uppercase;letter-spacing:1px; margin-bottom:7px; }
   .support p { margin:0; color:#e2fff8; }
-  .step-foot { display:flex; justify-content:space-between;gap:10px;align-items:center;color:#a6c0ce;font-size:12px;margin:17px 0 0; }
+  .step-foot { display:flex; justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;color:#bfd4e0;font-size:15px;line-height:1.4;margin:17px 0 0; }
   .result-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:18px 0 24px; }
   .result { border:1px solid #397a74; background:#124038; border-radius:10px;padding:13px 8px;text-align:center; }
   .result b { color:#90ffdf;font-size:19px;display:block; }
-  .result span { color:#d9f6ee; font-size:11px; }
-  .tip { color:#b8d0dd; font-size:12px; margin:12px 0 0;text-align:center; }
+  .result span { color:#d9f6ee; font-size:15px; }
+  .tip { color:#b8d0dd; font-size:15px; margin:12px 0 0;text-align:center; }
   @media (max-width:680px) {
     header { padding:10px 13px;min-height:62px; }
     .brandmark { width:34px;height:34px;font-size:20px; }
@@ -95,7 +95,16 @@
     .map-legend { display:none; }
     .map-title { padding-bottom:4px; }
     .controls { grid-template-columns:repeat(3,43px);grid-template-rows:repeat(2,45px);gap:4px; }
-    .modal { padding:19px; }
+    .modal { padding:20px; }
+    .modal .label { font-size:13px; letter-spacing:1.2px; }
+    .modal h2 { font-size:clamp(29px,7vw,36px); }
+    .modal p { font-size:18px; }
+    .feature { font-size:17px; }
+    .option { font-size:17px; padding:14px; }
+    .btn { font-size:18px; }
+    .step-foot { font-size:14px; }
+    .support .support-title { font-size:14px; }
+    .tip { font-size:14px; }
     .result-cards { gap:5px; }
     .footer {font-size:9px;}
   }
