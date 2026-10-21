@@ -32,19 +32,19 @@
   #view { display:block; width:100%; height:100%; }
   .vignette { position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 150px #010913b5; }
   .crosshair { position:absolute;left:50%;top:45%;transform:translate(-50%,-50%); opacity:.75; pointer-events:none; font-size:24px; color:#d3f6ff; text-shadow:0 0 8px #ccefff; }
-  .hud { position:absolute; top:18px; left:18px; max-width:calc(100% - 36px); padding:12px 15px; border:1px solid #ffffff24; background:#081925d8; border-radius:12px; backdrop-filter:blur(8px); pointer-events:none; }
-  .hud small { display:block; font-size:10px; color:#80eacb; letter-spacing:1.5px; font-weight:900; margin-bottom:4px; }
-  .hud strong { display:block; font-size:clamp(12px,2vw,17px); }
-  .bottom-area { position:absolute; bottom:12px; left:12px;right:12px; display:flex; justify-content:space-between; align-items:end; gap:12px; pointer-events:none; }
-  .map-card { width:clamp(174px,23vw,286px); padding:9px; border:1px solid #517183b0; border-radius:14px; background:#071925dd; box-shadow:0 12px 30px #0009; backdrop-filter:blur(12px); pointer-events:auto; }
+  .hud { position:absolute; top:18px; right:18px; left:auto; width:fit-content; max-width:min(32%,365px); z-index:4; padding:15px 18px; border:1px solid #ffffff24; background:#081925d8; border-radius:12px; backdrop-filter:blur(8px); pointer-events:none; }
+  .hud small { display:block; font-size:14px; color:#80eacb; letter-spacing:1.5px; font-weight:900; margin-bottom:4px; }
+  .hud strong { display:block; font-size:clamp(15px,1.8vw,20px); line-height:1.32; }
+  .bottom-area { position:absolute; inset:0; z-index:3; pointer-events:none; }
+  .map-card { position:absolute; top:16px; left:16px; width:clamp(250px,27vw,380px); padding:12px; border:1px solid #517183b0; border-radius:14px; background:#071925dd; box-shadow:0 12px 30px #0009; backdrop-filter:blur(12px); pointer-events:auto; }
   .map-title { display:flex; gap:10px; align-items:center; justify-content:space-between; padding:0 3px 7px; }
-  .map-title strong { font-size:11px; color:#ebf7fe; letter-spacing:.6px; }
-  .map-title small { color:var(--amber); font-size:10px; font-weight:800; }
+  .map-title strong { font-size:15px; color:#ebf7fe; letter-spacing:.6px; }
+  .map-title small { color:var(--amber); font-size:13px; font-weight:800; }
   #minimap { width:100%; height:auto; display:block; border-radius:5px; image-rendering:pixelated; background:#09141d; }
-  .map-legend { margin:7px 0 0; display:flex; gap:9px; flex-wrap:wrap; font-size:10px; color:#b5cbd7; }
+  .map-legend { margin:9px 0 0; display:flex; gap:12px; flex-wrap:wrap; font-size:12px; color:#b5cbd7; }
   .dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:3px; }
-  .controls { display:grid; grid-template-columns:repeat(3,48px); grid-template-rows:repeat(2,46px); gap:5px; pointer-events:auto; user-select:none; touch-action:none; }
-  .ctrl { background:#0b2536e8; color:#edfcff; border:1px solid #6193a6; border-radius:12px; font-size:22px; font-weight:800; box-shadow:0 7px 16px #0007; touch-action:none; }
+  .controls { position:absolute; left:50%; bottom:16px; transform:translateX(-50%); display:grid; grid-template-columns:repeat(3,72px); grid-template-rows:repeat(2,68px); gap:9px; pointer-events:auto; user-select:none; touch-action:none; }
+  .ctrl { background:#0b2536e8; color:#edfcff; border:1px solid #6193a6; border-radius:14px; font-size:37px; font-weight:800; box-shadow:0 7px 16px #0007; touch-action:none; }
   .ctrl:active,.ctrl.active { background:#1b6c76; border-color:#83f0db; transform:scale(.96); }
   .ctrl[data-k="up"] { grid-column:2;grid-row:1; }
   .ctrl[data-k="left"] { grid-column:1;grid-row:2; }
@@ -89,12 +89,17 @@
     .restart { padding:8px;font-size:11px; }
     .wrap { padding:9px 8px 12px;gap:8px; }
     .scene { height:calc(100dvh - 130px); min-height:450px; border-radius:12px; }
-    .hud { top:9px; left:9px;padding:8px 10px; }
-    .bottom-area { left:7px;right:7px;bottom:7px; }
-    .map-card { width:clamp(160px,45vw,220px);padding:6px; }
+    .hud { top:9px; right:9px; left:auto; padding:10px 11px; max-width:calc(100% - clamp(190px,53vw,250px) - 26px); }
+    .hud small { font-size:13px; letter-spacing:.7px; }
+    .hud strong { font-size:15px; }
+    .bottom-area { inset:0; }
+    .map-card { top:9px; left:9px; width:clamp(190px,53vw,250px); padding:8px; }
+    .map-title strong { font-size:13px; }
+    .map-title small { font-size:11px; }
     .map-legend { display:none; }
     .map-title { padding-bottom:4px; }
-    .controls { grid-template-columns:repeat(3,43px);grid-template-rows:repeat(2,45px);gap:4px; }
+    .controls { bottom:12px; grid-template-columns:repeat(3,64px); grid-template-rows:repeat(2,62px); gap:7px; }
+    .ctrl { font-size:35px; }
     .modal { padding:20px; }
     .modal .label { font-size:13px; letter-spacing:1.2px; }
     .modal h2 { font-size:clamp(29px,7vw,36px); }
@@ -124,7 +129,7 @@
     <div class="hud" aria-live="polite"><small id="hudLabel">SIGUE TU RUTA</small><strong id="hudText">Busca el punto dorado en el mapa.</strong></div>
     <div class="bottom-area">
       <div class="map-card"><div class="map-title"><strong>◈ TU MAPA</strong><small id="mapStage">RETO 1 DE 3</small></div><canvas id="minimap" width="340" height="260" aria-label="Minimapa con ruta, ubicación y objetivo"></canvas><div class="map-legend"><span><i class="dot" style="background:#79f1d5"></i>Tú</span><span><i class="dot" style="background:#ffca6d"></i>Objetivo</span><span><i class="dot" style="background:#6196ca"></i>Ruta</span></div></div>
-      <div class="controls" aria-label="Controles táctiles"><button class="ctrl" type="button" data-k="up" aria-label="Avanzar">↑</button><button class="ctrl" type="button" data-k="left" aria-label="Girar izquierda">↶</button><button class="ctrl" type="button" data-k="down" aria-label="Retroceder">↓</button><button class="ctrl" type="button" data-k="right" aria-label="Girar derecha">↷</button></div>
+      <div class="controls" aria-label="Controles táctiles"><button class="ctrl" type="button" data-k="up" aria-label="Avanzar">↑</button><button class="ctrl" type="button" data-k="left" aria-label="Girar izquierda">←</button><button class="ctrl" type="button" data-k="down" aria-label="Retroceder">↓</button><button class="ctrl" type="button" data-k="right" aria-label="Girar derecha">→</button></div>
     </div>
     <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-live="polite">
       <div class="modal" id="modal"></div>
@@ -293,8 +298,15 @@ function drawMini(){
    mc.font=`bold ${Math.round(cell*.42)}px system-ui`;mc.textAlign='center';mc.textBaseline='middle';mc.fillStyle=i<completed?'#073527':'#182936';mc.fillText(i<completed?'✓':(i+1),cx,cy+.2);
  }
  if(completed===3){mc.beginPath();mc.arc(ox+15.5*cell,oy+1.5*cell,cell*.46,0,7);mc.fillStyle='#69f3c3';mc.fill();}
- mc.save();mc.translate(ox+player.x*cell,oy+player.y*cell);mc.rotate(player.a);
- mc.beginPath();mc.moveTo(cell*.52,0);mc.lineTo(-cell*.38,-cell*.32);mc.lineTo(-cell*.26,0);mc.lineTo(-cell*.38,cell*.32);mc.closePath();mc.fillStyle='#e6fff9';mc.shadowColor='#58eac6';mc.shadowBlur=8;mc.fill();mc.restore();
+ mc.save();mc.translate(ox+player.x*cell,oy+player.y*cell);
+  // Halo verde: facilita localizar al jugador en el minimapa.
+  mc.beginPath();mc.arc(0,0,cell*.92,0,Math.PI*2);mc.fillStyle='#39e6c344';mc.fill();
+  mc.strokeStyle='#76ffe0';mc.lineWidth=Math.max(1.5,cell*.12);mc.stroke();
+  // Flecha blanca de mayor tamaño y contraste.
+  mc.rotate(player.a);
+  mc.beginPath();mc.moveTo(cell*1.06,0);mc.lineTo(-cell*.65,-cell*.55);mc.lineTo(-cell*.39,0);mc.lineTo(-cell*.65,cell*.55);mc.closePath();
+  mc.shadowColor='#5cfadd';mc.shadowBlur=cell*.7;mc.fillStyle='#ffffff';mc.fill();
+  mc.shadowBlur=0;mc.strokeStyle='#06252a';mc.lineWidth=Math.max(2,cell*.17);mc.stroke();mc.restore();
 }
 function resize(){
  const r=scene.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,1.5);
